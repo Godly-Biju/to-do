@@ -54,7 +54,7 @@ function App() {
             try {
                 const result = await saveAPI(Details) 
                     if(result.status>=200 && result.status<300){
-                        alert("Book Uploaded successfully !!")
+                        alert("Uploaded successfully !!")
                         handleClose()
                     }
                     else{
@@ -91,7 +91,7 @@ function App() {
 
 
       {/* ADD */}
-      <h3 style={{display:'inline'}} className='ms-2 ps-5 text-warning fw-bolder fs-1'>Upload new video</h3>
+      <h3 style={{display:'inline'}} className='ms-2 ps-5 text-warning fw-bolder fs-1'>Upload new TO-DO</h3>
       <button onClick={handleShow} className='btn rounded-circle bg-warning ms-3 mb-2'><i class="fa-solid fa-plus"></i></button>
           
           
