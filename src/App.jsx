@@ -224,8 +224,9 @@ function App() {
             <td>{data.deadline}</td>
             <td>{data.priority}</td>
             <td>{data.status}</td>
-            <td><i class="fa-solid fa-pen-to-square" onClick={()=>{handleShowEdit();setKey1(key)}}></i></td>
+            <td><i class="fa-solid fa-pen-to-square" onClick={()=>{setKey1(key);handleShowEdit();}}></i></td>
             <td><i class="fa-solid fa-delete-left" onClick={()=>delete1(data.id)}></i></td>
+            {/* <button onClick={() => { setEdit(Book.id); handleShowEdit(); }}>Edit</button> */}
 
           </tr>
           ))
