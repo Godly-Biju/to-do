@@ -59,21 +59,29 @@ function App() {
     get()
   }
 
-  const updated = async (id,DetailsEdit) =>{
+  const updated = async (key1,DetailsEdit) =>{
+    console.log(`Details - ${DetailsEdit}`);
+
     const {title,description,deadline,priority,status} = DetailsEdit
 
     if (title && description && deadline && priority && status){
       // Store permanently
       try {
-          const result = await updateAPI(id,DetailsEdit) 
+          console.log(DetailsEdit);
+          
+          const result = await updateAPI(key1,DetailsEdit) 
+              console.log(result);
+              console.log(`status - ${result.status}` );
+
+              
               if(result.status>=200 && result.status<300){
                   alert("Uploaded successfully !!")
                   handleCloseEdit()
                   get()
               }
               else{
-                  console.log(result);
-                  console.log("here1");
+                  console.log(`status - ${result.status}` );
+                  console.log("here2");
                   
               }
           
