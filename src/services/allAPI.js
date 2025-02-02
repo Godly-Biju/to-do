@@ -11,3 +11,12 @@ export const getAPI= async () => {
     return await commonAPI("GET",`${URL}/Upload`)
 }
 
+
+export const deleteAPI= async (id) => {
+    return await commonAPI("DELETE",`${URL}/Upload/${id}`)
+}
+
+export const updateAPI= async (id,data) => {
+    return await commonAPI("PUT",`${URL}/Upload/${id}`,data)
+}
+
