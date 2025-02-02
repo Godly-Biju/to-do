@@ -16,7 +16,7 @@ export const deleteAPI= async (id) => {
     return await commonAPI("DELETE",`${URL}/Upload/${id}`)
 }
 
-export const updateAPI= async (id,data) => {
-    return await commonAPI("PUT",`${URL}/Upload/${id}`,data)
+export const updateAPI= async (DetailsEdit,key1) => {
+    return await commonAPI("PUT",`${URL}/Upload/${key1}`,DetailsEdit)
 }
 

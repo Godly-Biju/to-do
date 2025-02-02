@@ -59,7 +59,7 @@ function App() {
     get()
   }
 
-  const updated = async (key1,DetailsEdit) =>{
+  const updated = async (DetailsEdit,key1) =>{
     console.log(`Details - ${DetailsEdit}`);
     console.log(`key - ${key1}`);
     
