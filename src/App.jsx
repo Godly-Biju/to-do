@@ -61,6 +61,8 @@ function App() {
 
   const updated = async (key1,DetailsEdit) =>{
     console.log(`Details - ${DetailsEdit}`);
+    console.log(`key - ${key1}`);
+    
 
     const {title,description,deadline,priority,status} = DetailsEdit
 
@@ -81,7 +83,7 @@ function App() {
               }
               else{
                   console.log(`status - ${result.status}` );
-                  console.log("here2");
+                  console.log("here3");
                   
               }
           
@@ -226,7 +228,6 @@ function App() {
             <td>{data.status}</td>
             <td><i class="fa-solid fa-pen-to-square" onClick={()=>{setKey1(key);handleShowEdit();}}></i></td>
             <td><i class="fa-solid fa-delete-left" onClick={()=>delete1(data.id)}></i></td>
-            {/* <button onClick={() => { setEdit(Book.id); handleShowEdit(); }}>Edit</button> */}
 
           </tr>
           ))

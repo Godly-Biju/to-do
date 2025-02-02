@@ -10,7 +10,7 @@ const commonAPI = async(Httpmethod,url,reqBody) =>{
         // argument and key value is same then key is enough
         
     }
-    if (Httpmethod !== "GET") {
+    if (Httpmethod !== "GET" ) {
         reqConfig.data = reqBody;
     }
     return await axios(reqConfig).then(res=>{
