@@ -59,8 +59,8 @@ function App() {
     get()
   }
 
-  const updated = async (DetailsEdit,key1) =>{
-    console.log(`Details - ${DetailsEdit}`);
+  const updated = async (DetailsEdit) =>{
+    console.log(`Details - ${DetailsEdit}`);  
     console.log(`key - ${key1}`);
     
 
@@ -69,7 +69,7 @@ function App() {
     if (title && description && deadline && priority && status){
       // Store permanently
       try {
-          console.log(DetailsEdit);
+          console.log(`value - ${DetailsEdit}`);
           
           const result = await updateAPI(key1,DetailsEdit) 
               console.log(result);
@@ -165,7 +165,7 @@ function App() {
           <Button variant="secondary" onClick={handleCloseEdit}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=>updated(key1,DetailsEdit)}>
+          <Button variant="primary" onClick={()=>updated(DetailsEdit)}>
             Save Changes
           </Button>
         </Modal.Footer>
@@ -226,7 +226,7 @@ function App() {
             <td>{data.deadline}</td>
             <td>{data.priority}</td>
             <td>{data.status}</td>
-            <td><i class="fa-solid fa-pen-to-square" onClick={()=>{setKey1(key);handleShowEdit();}}></i></td>
+            <td><i class="fa-solid fa-pen-to-square" onClick={()=>{setKey1(data.id);handleShowEdit();}}></i></td>
             <td><i class="fa-solid fa-delete-left" onClick={()=>delete1(data.id)}></i></td>
 
           </tr>

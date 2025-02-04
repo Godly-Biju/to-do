@@ -1,23 +1,31 @@
-
 import axios from "axios";
 
+const commonAPI = async (Httpmethod, url, reqBody) => {
+  const reqConfig = {
+    method: Httpmethod,
+    url,
+  };
 
-const commonAPI = async(Httpmethod,url,reqBody) =>{
+  if (Httpmethod !== "GET") {
+    reqConfig.data = reqBody;
+  }
 
-    const reqConfig = {
-        method : Httpmethod,
-        url,
-        // argument and key value is same then key is enough
-        
+  try {
+    const res = await axios(reqConfig);
+    return res;
+  } catch (err) {
+    // Handling error properly
+    if (err.response) {
+      // The request was made and the server responded with a status code outside the range of 2xx
+      return err.response;
+    } else if (err.request) {
+      // The request was made but no response was received
+      return { message: "No response from server", details: err.request };
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      return { message: "Error in request setup", details: err.message };
     }
-    if (Httpmethod !== "GET" ) {
-        reqConfig.data = reqBody;
-    }
-    return await axios(reqConfig).then(res=>{
-        return res
-    }).catch(err=>{
-        return err
-    })
+  }
+};
 
-}
-export default commonAPI
+export default commonAPI;
